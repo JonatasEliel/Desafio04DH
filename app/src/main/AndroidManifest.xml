@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Desafio04DH">
         <activity
+            android:name=".view.RegisterActivity"
+            android:theme="@style/Theme.RegisterScreen" />
+        <activity
             android:name=".view.LoginActivity"
             android:theme="@style/Theme.LoginScreen" />
         <activity
