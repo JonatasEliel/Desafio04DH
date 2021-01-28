@@ -1,4 +1,4 @@
-package br.com.digitalhouse.desafio04dh.view
+package br.com.digitalhouse.desafio04dh.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
