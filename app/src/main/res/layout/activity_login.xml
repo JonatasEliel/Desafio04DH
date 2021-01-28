@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shape_round_background"
         android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,15 +23,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="E-mail"
-            android:textColorHint="@color/secondary_text">
+            android:textColorHint="@color/secondary_text"
+            app:boxBackgroundColor="@android:color/transparent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
+                android:text="dh@digitalhouse.com"
                 android:textColor="@color/primary_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -39,15 +41,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="Senha"
-            android:textColorHint="@color/secondary_text">
+            android:textColorHint="@color/secondary_text"
+            app:boxBackgroundColor="@android:color/transparent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:inputType="textPassword"
+                android:text="000000000000000"
                 android:textColor="@color/primary_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:checked="true"
             android:text="Manter-me logado"
             android:textColor="@color/other_text"
             android:textSize="16sp" />
