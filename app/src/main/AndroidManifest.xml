@@ -24,7 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.MainActivity" />
+        <activity
+            android:name=".view.MainActivity"
+            android:label="Procurar jogos"
+            android:theme="@style/Theme.MainScreen" />
     </application>
 
 </manifest>

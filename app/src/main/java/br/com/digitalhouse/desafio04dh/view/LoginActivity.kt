@@ -3,7 +3,6 @@ package br.com.digitalhouse.desafio04dh.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.digitalhouse.desafio04dh.R
 import br.com.digitalhouse.desafio04dh.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
