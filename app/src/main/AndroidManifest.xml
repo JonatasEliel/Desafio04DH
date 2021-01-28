@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Desafio04DH">
         <activity
+            android:name=".view.LoginActivity"
+            android:theme="@style/Theme.LoginScreen" />
+        <activity
             android:name=".view.SplashActivity"
             android:theme="@style/Theme.SplashScreen">
             <intent-filter>
