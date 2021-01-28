@@ -10,10 +10,9 @@ import br.com.digitalhouse.desafio04dh.R
 import br.com.digitalhouse.desafio04dh.model.Game
 import com.squareup.picasso.Picasso
 
-class AdapterGame(
-    private val gameList: ArrayList<Game>,
-    var listener: OnClickListenerGame
-) : RecyclerView.Adapter<AdapterGame.ViewHolderGame>() {
+class AdapterGame(var listener: OnClickListenerGame) : RecyclerView.Adapter<AdapterGame.ViewHolderGame>() {
+    private lateinit var gameList: ArrayList<Game>
+
     interface OnClickListenerGame {
         fun onClickGame(position: Int)
     }
@@ -37,6 +36,11 @@ class AdapterGame(
             }
         }
 
+    }
+
+    fun addList(list: ArrayList<Game>) {
+        gameList = list
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderGame {
