@@ -10,8 +10,9 @@
         android:id="@+id/ivBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:elevation="1dp"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_arrow_back"
@@ -22,6 +23,7 @@
         android:id="@+id/ivGamePhoto"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@id/llInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.286"
-        app:srcCompat="@drawable/ic_add_game" />
+        app:srcCompat="@drawable/ic_edit_game" />
 
     <LinearLayout
         android:id="@+id/llInfo"

@@ -27,12 +27,11 @@
             app:boxBackgroundColor="@android:color/transparent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edName"
+                android:id="@+id/edNameRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:inputType="text"
-                android:text="DigitalHouse Brasil"
                 android:textColor="@color/primary_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,12 +43,11 @@
             app:boxBackgroundColor="@android:color/transparent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edEmail"
+                android:id="@+id/edEmailRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
-                android:text="dh@digitalhouse.com"
                 android:textColor="@color/primary_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,12 +60,11 @@
             app:boxBackgroundColor="@android:color/transparent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edPassword"
+                android:id="@+id/edPasswordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
-                android:text="000000000000000"
                 android:textColor="@color/primary_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,12 +77,11 @@
             app:boxBackgroundColor="@android:color/transparent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edPasswordRepeat"
+                android:id="@+id/edPasswordRepeatRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
-                android:text="000000000000000"
                 android:textColor="@color/primary_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
