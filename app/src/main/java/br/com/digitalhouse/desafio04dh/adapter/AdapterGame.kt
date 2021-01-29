@@ -11,7 +11,7 @@ import br.com.digitalhouse.desafio04dh.model.Game
 import com.squareup.picasso.Picasso
 
 class AdapterGame(var listener: OnClickListenerGame) : RecyclerView.Adapter<AdapterGame.ViewHolderGame>() {
-    private lateinit var gameList: ArrayList<Game>
+    private var gameList = arrayListOf<Game>()
 
     interface OnClickListenerGame {
         fun onClickGame(position: Int)
