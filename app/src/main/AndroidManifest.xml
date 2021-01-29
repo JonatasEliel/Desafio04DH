@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Desafio04DH">
         <activity
-            android:name=".view.AddGameActivity"
+            android:name=".view.DetailActivity"
             android:parentActivityName=".view.MainActivity"
+            android:theme="@style/Theme.MainScreen" />
+        <activity
+            android:name=".view.AddGameActivity"
             android:theme="@style/Theme.MainScreen" />
         <activity
             android:name=".view.RegisterActivity"
