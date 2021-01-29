@@ -7,14 +7,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import br.com.digitalhouse.desafio04dh.R
-import br.com.digitalhouse.desafio04dh.databinding.ActivityAddGameBinding
 import br.com.digitalhouse.desafio04dh.model.Game
 import br.com.digitalhouse.desafio04dh.viewModel.MainViewModel
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
+import kotlinx.android.synthetic.main.activity_add_game.*
 
 class AddGameActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityAddGameBinding
     private lateinit var gameSent: Game
     private val viewModel: MainViewModel by viewModels()
     private val imgCode = 0
@@ -23,15 +22,14 @@ class AddGameActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddGameBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_add_game)
         setUpOnClickListeners()
 
         if (intent != null && intent.extras != null) {
             gameSent = Game(
                 Uri.parse(intent.getStringExtra("gamePhoto")),
                 intent.getStringExtra("gameName")!!,
-                intent.getIntExtra("gameYear", 1900),
+                intent.getIntExtra("gameYear", 1900).toString().toInt(),
                 intent.getStringExtra("gameDescription")!!
             )
 
@@ -40,15 +38,15 @@ class AddGameActivity : AppCompatActivity() {
     }
 
     private fun setUpOnClickListeners() {
-        binding.btnSaveGame.setOnClickListener {
+        btnSaveGame.setOnClickListener {
             saveGame(
-                binding.edName.toString(),
-                binding.edCreatedAt.toString().toInt(),
-                binding.edDescription.toString()
+                edName.text.toString(),
+                edCreatedAt.text.toString().toInt(),
+                edDescription.text.toString()
             )
         }
 
-        binding.fBtnAddPhoto.setOnClickListener {
+        fBtnAddPhoto.setOnClickListener {
             addPhoto()
         }
     }
@@ -71,7 +69,7 @@ class AddGameActivity : AppCompatActivity() {
                         .fit()
                         .centerCrop()
                         .transform(CropCircleTransformation())
-                        .into(binding.fBtnAddPhoto)
+                        .into(fBtnAddPhoto)
                 }
             }
         }
@@ -85,10 +83,10 @@ class AddGameActivity : AppCompatActivity() {
             .fit()
             .centerCrop()
             .transform(CropCircleTransformation())
-            .into(binding.fBtnAddPhoto)
-        binding.edName.setText(gameSent.name)
-        binding.edCreatedAt.setText(gameSent.year)
-        binding.edDescription.setText(gameSent.description)
+            .into(fBtnAddPhoto)
+        edName.setText(gameSent.name)
+        edCreatedAt.setText(gameSent.year)
+        edDescription.setText(gameSent.description)
     }
 
     private fun addPhoto() {

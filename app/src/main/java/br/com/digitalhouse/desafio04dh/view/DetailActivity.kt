@@ -4,47 +4,48 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import br.com.digitalhouse.desafio04dh.R
-import br.com.digitalhouse.desafio04dh.databinding.ActivityDetailBinding
 import br.com.digitalhouse.desafio04dh.model.Game
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
+import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDetailBinding
     private lateinit var game: Game
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_detail)
         setUpOnClickListeners()
 
-        game = Game(Uri.parse(intent.getStringExtra("gamePhoto")),
+        game = Game(
+            Uri.parse(intent.getStringExtra("gamePhoto")),
             intent.getStringExtra("gameName")!!,
             intent.getIntExtra("gameYear", 1900).toString().toInt(),
-            intent.getStringExtra("descriptionGame")!!)
+            intent.getStringExtra("gameDescription")!!
+        )
 
         Picasso.get().load(game.img)
             .fit()
             .centerCrop()
-            .transform(CropCircleTransformation()).into(binding.ivGamePhoto)
-        binding.tvGameName.text = game.name
-        binding.tvGameYear.text = game.year.toString()
-        binding.tvGameDescription.text = game.description
+            .transform(CropCircleTransformation()).into(ivGamePhoto)
+        tvGameName.text = game.name
+        tvGameYear.text = game.year.toString()
+        tvGameDescription.text = game.description
     }
 
     private fun setUpOnClickListeners(){
-        binding.ivBack.setOnClickListener {
+        ivBack.setOnClickListener {
             finish()
         }
 
-        binding.fBtnEditGame.setOnClickListener {
+        fBtnEditGame.setOnClickListener {
             val intent = Intent(this, AddGameActivity::class.java)
 
-            intent.putExtra("gamePhoto", game.img)
+            intent.putExtra("gamePhoto", game.img.toString())
             intent.putExtra("gameName", game.name)
-            intent.putExtra("gameYear", game.year)
+            intent.putExtra("gameYear", game.year.toString())
             intent.putExtra("gameDescription", game.description)
 
             startActivity(intent)
