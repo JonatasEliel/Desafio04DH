@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/kratos"
     android:padding="8dp"
-    tools:context=".view.LoginActivity">
+    tools:context=".view.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

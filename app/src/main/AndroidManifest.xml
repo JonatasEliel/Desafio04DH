@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Desafio04DH">
-        <activity android:name=".view.AddGameActivity"></activity>
+        <activity
+            android:name=".view.AddGameActivity"
+            android:parentActivityName=".view.MainActivity"
+            android:theme="@style/Theme.MainScreen" />
         <activity
             android:name=".view.RegisterActivity"
             android:theme="@style/Theme.RegisterScreen" />
