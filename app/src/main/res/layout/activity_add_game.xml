@@ -4,6 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/kratos"
+    android:padding="8dp"
     tools:context=".view.AddGameActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fBtnAddPhoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/red"
+        android:src="@drawable/ic_add_photo"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_round_background"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:hint="Nome"
+            android:textColorHint="@color/secondary_text"
+            app:boxBackgroundColor="@android:color/transparent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textColor="@color/primary_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Criado em"
+            android:textColorHint="@color/secondary_text"
+            app:boxBackgroundColor="@android:color/transparent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edCreatedAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:textColor="@color/primary_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Descrição"
+            android:textColorHint="@color/secondary_text"
+            app:boxBackgroundColor="@android:color/transparent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="50"
+                android:gravity="start|top"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:textColor="@color/primary_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnSaveGame"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="80dp"
+            android:text="Salvar jogo"
+            android:textColor="@color/white" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
